@@ -20,13 +20,14 @@ Daca pygame nu poate fi instalat din terminal (cu comanda **pip install pygame**
 Sunt doua versiuni ale programului: 
 * versiunea normala (alege un cuvant random din **Cuvinte.in** pe care joaca optim Wordle; poate fi rulata cu **solver_normal.bat**)
 * versiunea bulk (ghiceste mai multe cuvinte unul dupa altul, citite din fisierul **cuvinte_mic.in**; poate fi rulata cu **solver_bulk.bat**).  
-In fisierul **cuvinte_mic.in**, cuvintele trebuie sa fie scrise pe randuri diferite.
+
+In fisierul **cuvinte_mic.in**, cuvintele trebuie sa fie scrise pe randuri diferite.  
 In **rezultate.out** sunt scrise incercarile pentru fiecare cuvant din cuvinte_mic.in.  
 In fisierul **runtime.out** este scris timpul de executie pentru ultimul cuvant ghicit.
 
 ## Interfata grafica:
 
-Partea de GUI este facuta in Python, utilizand modulul **pygame**. Pygame deschide o fereastra care arata utilizatorului corectitudinea fiecarui guess generat (ca si jocul original Wordle) pentru cuvantul de ghicit respectiv. 
+Partea de GUI este facuta in Python, utilizand modulul **pygame**. Pygame deschide o fereastra care arata utilizatorului corectitudinea fiecarui guess generat (ca si jocul original Wordle) pentru cuvantul de ghicit respectiv.  
 O fereastra generata de pygame se aseamana cu un canvas, in sensul ca foloseste mai multe functii (cum ar fi blit()) pentru a determina ce “deseneaza” pe window si unde, dar si pentru a actualiza fereastra (functia pygame.display.flip()). Window-ul este actualizat de fiecare data cand programul primeste un guess nou de la guesser-ul **a.exe** (scris in C++).
 
 ## Documentatie pentru Algoritmul de guessing:
