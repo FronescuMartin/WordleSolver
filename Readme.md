@@ -63,4 +63,12 @@ Pentru a optimiza timpul de executie, am precalculat entropia tuturor cuvintelor
 Fisierul **solver_normal.bat** va rula programul Python **wordle_single.py**, iar **solver_bulk.bat** va rula programul Python **wordle_bulk.py**, care pentru fiecare cuvant ruleaza **wordle_func.py** si **a.exe**. Dupa ghicirea fiecarui cuvant se repornesc programele mentionate anterior.
 Dupa ce genereaza fiecare guess (scriindu-l in **Guesses.txt**), programul guesser **a.exe** (scris in C++, cod sursa in **main.cpp**) asteapta sa primeasca feedback (scris in **Feedback.txt**). Intre timp, programul de feedback/jocul de wordle (scris in Python) genereaza feedback-ul guess-ului curent, iar dupa aceea asteapta sa primeasca urmatorul guess. Pentru a nu exista coliziuni, fiecare program goleste fisierele in care scrie in momentul in care se asigura ca celalalt a primit informatiile necesare.
 
+## Referinte
+* https://www.pygame.org/docs/
+* https://www.youtube.com/watch?v=v68zYyaEmEA
+* https://en.cppreference.com/w/
+* https://docs.python.org/3/reference/
+* https://dr0id.bitbucket.io/legacy/pygame_tutorials.html
 
+## Realizat de
+Dan Alexandru, Fronescu Martin-Cristian, Velișan George-Daniel, Vizinteanu Teodora
