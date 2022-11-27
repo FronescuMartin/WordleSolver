@@ -48,8 +48,8 @@ prodCart[k]['B']=1 ne spune ca B se afla undeva in cuvant
 prodCart[k]['C']=0 ne spune ca C nu se afla in cuvant  
 
 **IV.** Cu mai multe for-uri sunt generate astfel de cazuri de feedback posibil si pentru fiecare dintre ele este calculata informatia care 
-urmeaza sa fie adaugata la formula de entropie.(formula de entropie este: $$\sum \left( probabilitate* log2 \left(1 \over probabilitate \right) \right)$$  
-**V.** Aceasta entropie este calculate pentru fiecare cuvant si este stocata in map-ul entropieCuvant.  
+urmeaza sa fie adaugata la formula de entropie. Formula de entropie este: $$\sum \left( probabilitate* log2 \left(1 \over probabilitate \right) \right)$$  
+**V.** Aceasta entropie este calculata pentru fiecare cuvant si este stocata in map-ul entropieCuvant.  
 **VI.** Entropiile sunt comparate iar guesser-ul transmite cuvantul cu entropia cea mai mare urmand sa astepte feedback de la wordle.  
 **VII.** Dupa ce primeste feedback acesta sterge din lista words_posibil cuvintele care nu respecta feedback-ul si urmeaza sa calculeze   
 urmatorul cuvant care are cea mai mare entropie.
