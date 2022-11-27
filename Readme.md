@@ -31,12 +31,12 @@ O fereastra generata de pygame se aseamana cu un canvas, in sensul ca foloseste 
 
 ## Documentatie pentru Algoritmul de guessing:
 
-I. Pentru ca guesser-ul sa aleaga un cuvant potrivit , trebuie sa calculeze care dintre cuvinte imi ofera cea mai mare informatie.
-Aceste cuvinte in program sa afle in vectorul(words)
-II. Informatia este calculata in functie de probabilitatea oferita de diferite cazuri de feedback. Probabilitatea este calculata cu formula:
+**I.** Pentru ca guesser-ul sa aleaga un cuvant potrivit , trebuie sa calculeze care dintre cuvinte imi ofera cea mai mare informatie.
+Aceste cuvinte in program sa afle in vectorul(words)  
+**II**. Informatia este calculata in functie de probabilitatea oferita de diferite cazuri de feedback. Probabilitatea este calculata cu formula:
 cazuri favorabile / cazuri posibile , cazurile favorabile reprezentand lista de cuvinte care mi-ar oferi genul ala de feedback pentru
-cuvantul ales din words, iar cazurile posibile fiind lista de cuvinte posibil alese de wordle (se afla in words_posibil din program).
-III. feedback-ul este reprezentat de produsul cartezian a multimi {0,1,2} de 5 ori . Aceste valori sunt stocate intr-un vectori de map-uri 
+cuvantul ales din words, iar cazurile posibile fiind lista de cuvinte posibil alese de wordle (se afla in words_posibil din program).  
+**III.** feedback-ul este reprezentat de produsul cartezian a multimi {0,1,2} de 5 ori . Aceste valori sunt stocate intr-un vectori de map-uri 
 prodCart[5]. Fiecare element al acestui vector reprezinte o pozitie in cuvant (adica prodCart[0] este prima litera dintr-un cuvant de 
 5 litere).Restrictiile acestui feedback sunt reprezentate de valorile: 
 * 0-litera nu se afla in cuvant  
@@ -44,17 +44,17 @@ prodCart[5]. Fiecare element al acestui vector reprezinte o pozitie in cuvant (a
 * 2-litera se afla pozitia asta in cuvant
 Un exemplu : prodCart[k]['A']=2 ne spune ca pe pozitia k in cuvant se afla litera A
 prodCart[k]['B']=1 ne spune ca B se afla undeva in cuvant
-prodCart[k]['C']=0 ne spune ca C nu se afla in cuvant
+prodCart[k]['C']=0 ne spune ca C nu se afla in cuvant  
 
-IV. Cu mai multe for-uri sunt generate astfel de cazuri de feedback posibil si pentru fiecare dintre ele este calculata informatia care 
-urmeaza sa fie adaugata la formula de entropie.(formula de entropie este: $$\sum \left( probabilitate* log2 \left(1 \over probabilitate \right) \right)$$
-V. Aceasta entropie este calculate pentru fiecare cuvant si este stocata in map-ul entropieCuvant.
-VI. Entropiile sunt comparate iar guesser-ul transmite cuvantul cu entropia cea mai mare urmand sa astepte feedback de la wordle.
-VII. Dupa ce primeste feedback acesta sterge din lista words_posibil cuvintele care nu respecta feedback-ul si urmeaza sa calculeze 
+**IV.** Cu mai multe for-uri sunt generate astfel de cazuri de feedback posibil si pentru fiecare dintre ele este calculata informatia care 
+urmeaza sa fie adaugata la formula de entropie.(formula de entropie este: $$\sum \left( probabilitate* log2 \left(1 \over probabilitate \right) \right)$$  
+**V.** Aceasta entropie este calculate pentru fiecare cuvant si este stocata in map-ul entropieCuvant.  
+**VI.** Entropiile sunt comparate iar guesser-ul transmite cuvantul cu entropia cea mai mare urmand sa astepte feedback de la wordle.  
+**VII.** Dupa ce primeste feedback acesta sterge din lista words_posibil cuvintele care nu respecta feedback-ul si urmeaza sa calculeze   
 urmatorul cuvant care are cea mai mare entropie.
 **Observatie!** Cuvintele din vector-ul words nu sunt niciodata modificate deoarce este posibil ca un cuvant care este determinat ca fiind 
-imposibil sa ofere mai multa informatie decat un cuvant posibil.
-VIII. Guesser se opreste in momentul in care vectorul words_posibil are un singur element(cuvantul ales de wordle).
+imposibil sa ofere mai multa informatie decat un cuvant posibil.  
+**VIII.** Guesser se opreste in momentul in care vectorul words_posibil are un singur element(cuvantul ales de wordle).  
 
 Pentru a optimiza timpul de executie, am precalculat entropia tuturor cuvintelor (utilizand acelasi algoritm), pentru a gasi opener-ul optim. Acesta este TAREI. 
 
